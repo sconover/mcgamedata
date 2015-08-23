@@ -4,49 +4,13 @@ import json
 import string
 import types
 
-# TODO: where are the boolean properties?
-# TODO: need to check ipython effects locally...
-# if classes show up in autocomplete, then split classes into a separate file.
-# ...I wonder if the import will expose them though...
-# TODO: generate docs for stuff useful in turtle using sphinx
-#   things that are visible externally...
-#   ...or that document game metadata
-# TODO: make a separate "game"/"game_info" module?
-#   ...future...make this a project?
-#   ...codegen to various languages
-#   ...this is a good basis for sphinx documentation
-#   ...put sphinx output on website
-# TODO: do something similar for entities
-#   enumerate entity tasks...
-# entity.startTask(uuid (or array...?), tasks.OCELOT_SIT)
-# entity.startTask(uuid, tasks.OCELOT_FOLLOW_OWNER)
-# entity.stopTask(uuid, tasks.OCELOT_FOLLOW_OWNER)
-# ...will need lots of error checking / help...
-# also use type to determine whether task was mis-applied
-# entity.create(x, y, z, entity.OCELOT) : uuid
-# entity.getNearest(x, y, z, entity.OCELOT, 7) : uuid[]
-
-# pendown(entity.OCELOT)
-# penup()
-# turtle/functional method...
-# start(tasks.OCELOT_FOLLOW_OWNER, select(entity.OCELOT, trail())
-# ...or just match only things created that task would apply to (default select)
-# ...and trail() is implicit too
-# start(tasks.OCELOT_FOLLOW_OWNER)
-# start(tasks.OCELOT_FOLLOW_OWNER, select=entity.OCELOT)
-# start(tasks.OCELOT_FOLLOW_OWNER, select=first(entity.OCELOT))
-# start(tasks.OCELOT_FOLLOW_OWNER, select=last(entity.OCELOT))
-# stop(tasks.OCELOT_FOLLOW_OWNER)
-# start(tasks.OCELOT_MATE)
-# start(tasks.OCELOT_ATTACK)
-# select_distance(entity.OCELOT, 100, uuid=reference)
-# select_distance(entity.OCELOT, 100, x= y= z=)
+INDENT = "    "
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 blocks = json.loads(open(os.path.join(this_dir, "block_metadata.json")).read())
 
-target_definition_file = os.path.join(this_dir, "../mcpi/gamedata/block_definition.py")
-target_block_file = os.path.join(this_dir, "../mcpi/gamedata/block.py")
+target_definition_file = os.path.join(this_dir, "../mcgamedata/block_definition.py")
+target_block_file = os.path.join(this_dir, "../mcgamedata/block.py")
 
 block_definition_lines = [
   "from block_property import EnumProperty, IntegerProperty, BooleanProperty",
@@ -83,26 +47,6 @@ block_definition_lines = [
 #      }
 #    ]
 #  },
-#
-# becomes
-#
-# class Anvil(BlockV2):
-#   def __init__(self):
-#     self.id = 145
-#     self.name = "anvil"
-#
-#   DAMAGE = IntProperty("damage")
-#   DAMAGE_0 = DAMAGE.value(0)
-#   DAMAGE_1 = DAMAGE.value(1)
-#   DAMAGE_2 = DAMAGE.value(2)
-#
-#   FACING = EnumProperty("facing")
-#   FACING_NORTH = FACING.value("north")
-#   FACING_SOUTH = FACING.value("south")
-#   FACING_EAST  = FACING.value("east")
-#   FACING_WEST  = FACING.value("west")
-#
-# ANVIL = Anvil()
 
 all_blocks = []
 
@@ -117,9 +61,9 @@ for block in blocks:
   block_definition_lines.extend([
     "",
     "class " + upper_camel_block_name + "(BlockDefinition):",
-    "  def __init__(self):",
-    "    self.id = " + str(block_id),
-    "    self.name = '" + lowercase_block_name + "'",
+    INDENT + "def __init__(self):",
+    INDENT + INDENT + "self.id = " + str(block_id),
+    INDENT + INDENT + "self.name = '" + lowercase_block_name + "'",
     ""
   ])
 
@@ -129,7 +73,7 @@ for block in blocks:
     capitalized_type = string.capwords(p["type"])
 
     block_definition_lines.append(
-      "  PROPERTY_" + uppercase_property_name + " = " +
+      INDENT + "PROPERTY_" + uppercase_property_name + " = " +
         capitalized_type + "Property('" + lowercase_property_name + "')")
 
     property_value_lines = []
@@ -137,7 +81,7 @@ for block in blocks:
 
     for v in p["possible_values"]:
       uppercase_value = str(v).upper()
-      const_name = value_line = "  " + uppercase_property_name + "_" + uppercase_value
+      const_name = value_line = INDENT + uppercase_property_name + "_" + uppercase_value
       value = "PROPERTY_" + uppercase_property_name + ".value("
       if type(v) is types.StringType or type(v) is types.UnicodeType:
         value += "'" + v + "'"

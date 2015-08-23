@@ -1,0 +1,369 @@
+[
+  {
+    "name": "creeper",
+    "tasks": [
+      "swim",
+      "swell_creeper",
+      "avoid",
+      "avoid",
+      "attack_on_collide",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "skeleton",
+    "tasks": [
+      "swim",
+      "avoid_sun",
+      "avoid",
+      "flee_sun",
+      "avoid",
+      "wander",
+      "watch_closest",
+      "look_idle",
+      "attack_on_collide"
+    ]
+  },
+  {
+    "name": "spider",
+    "tasks": [
+      "swim",
+      "avoid",
+      "leap_at_target",
+      "spider_attack",
+      "spider_attack",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "giant",
+    "tasks": []
+  },
+  {
+    "name": "zombie",
+    "tasks": [
+      "swim",
+      "attack_on_collide",
+      "avoid",
+      "move_towards_restriction",
+      "wander",
+      "watch_closest",
+      "look_idle",
+      "attack_on_collide",
+      "attack_on_collide",
+      "move_through_village"
+    ]
+  },
+  {
+    "name": "slime",
+    "tasks": [
+      "slime_float",
+      "slime_attack",
+      "slime_face_random",
+      "slime_hop"
+    ]
+  },
+  {
+    "name": "ghast",
+    "tasks": [
+      "ghast_fly",
+      "ghast_look_around",
+      "ghast_fireball_attack"
+    ]
+  },
+  {
+    "name": "pig_zombie",
+    "tasks": [
+      "swim",
+      "attack_on_collide",
+      "avoid",
+      "move_towards_restriction",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "enderman",
+    "tasks": [
+      "swim",
+      "attack_on_collide",
+      "wander",
+      "watch_closest",
+      "look_idle",
+      "enderman_place_block",
+      "enderman_take_block"
+    ]
+  },
+  {
+    "name": "cave_spider",
+    "tasks": [
+      "swim",
+      "avoid",
+      "leap_at_target",
+      "spider_attack",
+      "spider_attack",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "silverfish",
+    "tasks": [
+      "swim",
+      "summon_silverfish",
+      "attack_on_collide",
+      "silverfish_hide_in_stone"
+    ]
+  },
+  {
+    "name": "blaze",
+    "tasks": [
+      "blaze_fireball_attack",
+      "move_towards_restriction",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "magma_cube",
+    "tasks": [
+      "slime_float",
+      "slime_attack",
+      "slime_face_random",
+      "slime_hop"
+    ]
+  },
+  {
+    "name": "ender_dragon",
+    "tasks": []
+  },
+  {
+    "name": "wither",
+    "tasks": [
+      "swim",
+      "attack_with_arrow",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "bat",
+    "tasks": []
+  },
+  {
+    "name": "witch",
+    "tasks": [
+      "swim",
+      "attack_with_arrow",
+      "wander",
+      "avoid",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "pig",
+    "tasks": [
+      "swim",
+      "panic",
+      "player_control",
+      "mate",
+      "tempt",
+      "tempt",
+      "follow_parent",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "sheep",
+    "tasks": [
+      "swim",
+      "panic",
+      "mate",
+      "tempt",
+      "follow_parent",
+      "eat_grass",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "cow",
+    "tasks": [
+      "swim",
+      "panic",
+      "mate",
+      "tempt",
+      "follow_parent",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "chicken",
+    "tasks": [
+      "swim",
+      "panic",
+      "mate",
+      "tempt",
+      "follow_parent",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "squid",
+    "tasks": [
+      "squid_move_random"
+    ]
+  },
+  {
+    "name": "wolf",
+    "tasks": [
+      "swim",
+      "sit",
+      "leap_at_target",
+      "attack_on_collide",
+      "follow_owner",
+      "mate",
+      "wander",
+      "beg",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "mushroom_cow",
+    "tasks": [
+      "swim",
+      "panic",
+      "mate",
+      "tempt",
+      "follow_parent",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "snowman",
+    "tasks": [
+      "attack_with_arrow",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "ocelot",
+    "tasks": [
+      "avoid",
+      "swim",
+      "sit",
+      "tempt",
+      "follow_owner",
+      "ocelot_sit",
+      "leap_at_target",
+      "ocelot_attack",
+      "mate",
+      "wander",
+      "watch_closest"
+    ]
+  },
+  {
+    "name": "iron_golem",
+    "tasks": [
+      "attack_on_collide",
+      "move_towards_target",
+      "move_through_village",
+      "move_towards_restriction",
+      "look_at_villager",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "horse",
+    "tasks": [
+      "swim",
+      "panic",
+      "run_around_like_crazy",
+      "mate",
+      "follow_parent",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "villager",
+    "tasks": [
+      "swim",
+      "avoid",
+      "trade_with_player",
+      "look_at_trade_player",
+      "move_indoor",
+      "avoid_doors",
+      "open_door",
+      "move_towards_restriction",
+      "mate_with_other_villager",
+      "follow_golem",
+      "watch_closest_2",
+      "interact_with_other_villagers",
+      "wander",
+      "watch_closest"
+    ]
+  },
+  {
+    "name": "guardian",
+    "tasks": [
+      "guardian_attack",
+      "move_towards_restriction",
+      "wander",
+      "watch_closest",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "rabbit",
+    "tasks": [
+      "swim",
+      "rabbit_panic",
+      "tempt",
+      "mate",
+      "rabbit_raid_farm",
+      "wander",
+      "watch_closest",
+      "rabbit_avoid_wolves"
+    ]
+  },
+  {
+    "name": "endermite",
+    "tasks": [
+      "swim",
+      "attack_on_collide",
+      "wander",
+      "watch_closest",
+      "look_idle"
+    ]
+  },
+  {
+    "name": "human",
+    "tasks": []
+  }
+]
