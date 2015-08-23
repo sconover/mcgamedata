@@ -2,9 +2,9 @@ class LivingDefinition():
   pass
 
 class EntityTask():
-    def __init__(self, entity, task):
-        self.entity = entity
-        self.task = task
+    def __init__(self, entity_name, task_name):
+        self.entity_name = entity_name
+        self.task_name = task_name
 
 
 class Any(LivingDefinition):

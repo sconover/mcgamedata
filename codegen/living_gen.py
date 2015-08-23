@@ -77,9 +77,9 @@ living_definition_lines = [
   "  pass",
   "",
   "class EntityTask():",
-  INDENT + "def __init__(self, entity, task):",
-  INDENT + INDENT + "self.entity = entity",
-  INDENT + INDENT + "self.task = task",
+  INDENT + "def __init__(self, entity_name, task_name):",
+  INDENT + INDENT + "self.entity_name = entity_name",
+  INDENT + INDENT + "self.task_name = task_name",
   ""
 ]
 
@@ -152,6 +152,8 @@ f.close()
 
 living_lines = [
   "import living_definition",
+  "",
+  "ALL = []",
   ""
 ]
 
@@ -162,7 +164,7 @@ for living in all_living:
 
 for living in all_living:
   living_lines.append(living['upper'].ljust(max_living_name_length) + " = living_definition." + \
-    living['camel'] + "()")
+    living['camel'] + "(); ALL.append(" + living['upper'] + ")")
 
 body = "\n".join(living_lines) + "\n"
 print body

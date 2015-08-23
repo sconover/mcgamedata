@@ -106,6 +106,8 @@ f.close()
 
 block_lines = [
   "import block_definition",
+  "",
+  "ALL = []",
   ""
 ]
 
@@ -116,7 +118,7 @@ for block in all_blocks:
 
 for block in all_blocks:
   block_lines.append(block['upper'].ljust(max_block_name_length) + " = block_definition." + \
-    block['camel'] + "()")
+    block['camel'] + "(); ALL.append(" + block['upper'] + ")")
 
 body = "\n".join(block_lines) + "\n"
 print body
