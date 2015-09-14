@@ -74,7 +74,8 @@ target_living_file = os.path.join(this_dir, "../mcgamedata/living.py")
 
 living_definition_lines = [
     "class LivingDefinition():",
-    "    pass",
+    INDENT + "def __str__(self):",
+    INDENT + INDENT + "return self.short_usage_str",
     "",
     "class EntityTask():",
     INDENT + "def __init__(self, entity_name, task_name):",
@@ -123,6 +124,7 @@ for living in livings:
         "class " + upper_camel_living_name + "(LivingDefinition):",
         INDENT + "def __init__(self):",
         INDENT + INDENT + "self.name = '" + lowercase_living_name + "'",
+        INDENT + INDENT + "self.short_usage_str = 'living." + uppercase_living_name + "'",
         ""
     ])
 

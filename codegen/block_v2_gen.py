@@ -16,7 +16,8 @@ block_definition_lines = [
     "from block_property import EnumProperty, IntegerProperty, BooleanProperty",
     "",
     "class BlockDefinition():",
-    "    pass",
+    INDENT + "def __str__(self):",
+    INDENT + INDENT + "return self.short_usage_str",
     ""
 ]
 
@@ -64,6 +65,9 @@ for block in blocks:
         INDENT + "def __init__(self):",
         INDENT + INDENT + "self.id = " + str(block_id),
         INDENT + INDENT + "self.name = '" + lowercase_block_name + "'",
+        INDENT + INDENT + "self.short_usage_str = 'block." + uppercase_block_name + "'",
+        "",
+        INDENT + "ALL_PROPERTIES = []",
         ""
     ])
 
@@ -72,25 +76,27 @@ for block in blocks:
         uppercase_property_name = lowercase_property_name.upper()
         capitalized_type = string.capwords(p["type"])
 
+        property_const = "PROPERTY_" + uppercase_property_name
         block_definition_lines.append(
-            INDENT + "PROPERTY_" + uppercase_property_name + " = " +
-                capitalized_type + "Property('" + lowercase_property_name + "')")
+            INDENT + property_const + " = " +
+                capitalized_type + "Property('" + lowercase_property_name + "'); ALL_PROPERTIES.append(" + property_const + ")")
 
         property_value_lines = []
         max_property_value_name_length = 0
 
         for v in p["possible_values"]:
             uppercase_value = str(v).upper()
-            const_name = value_line = INDENT + uppercase_property_name + "_" + uppercase_value
+            const_name = uppercase_property_name + "_" + uppercase_value
             value = "PROPERTY_" + uppercase_property_name + ".value("
             if type(v) is types.StringType or type(v) is types.UnicodeType:
                 value += "'" + v + "'"
             else:
                 value += str(v)
+            value += ", '" + const_name + "'"
             value += ")"
-            property_value_lines.append([const_name, value])
-            if len(const_name) > max_property_value_name_length:
-                max_property_value_name_length = len(const_name)
+            property_value_lines.append([INDENT + const_name, value])
+            if len(INDENT + const_name) > max_property_value_name_length:
+                max_property_value_name_length = len(INDENT + const_name)
 
         for line in property_value_lines:
             value_line = line[0].ljust(max_property_value_name_length) + " = " + line[1]
@@ -119,6 +125,14 @@ for block in all_blocks:
 for block in all_blocks:
     block_lines.append(block['upper'].ljust(max_block_name_length) + " = block_definition." + \
         block['camel'] + "(); ALL.append(" + block['upper'] + ")")
+
+block_lines.extend([
+    "",
+    "for block_def in ALL:",
+    INDENT + "for block_property in block_def.ALL_PROPERTIES:",
+    INDENT + INDENT + "block_property.block_definition = block_def",
+    ""
+])
 
 body = "\n".join(block_lines) + "\n"
 print body

@@ -1,5 +1,6 @@
 class LivingDefinition():
-  pass
+    def __str__(self):
+        return self.short_usage_str
 
 class EntityTask():
     def __init__(self, entity_name, task_name):
@@ -10,6 +11,7 @@ class EntityTask():
 class Any(LivingDefinition):
     def __init__(self):
         self.name = 'any'
+        self.short_usage_str = 'living.ANY'
 
     ATTACK_ON_COLLIDE             = EntityTask('any' ,'attack_on_collide')
     ATTACK_WITH_ARROW             = EntityTask('any' ,'attack_with_arrow')
@@ -70,12 +72,14 @@ class Any(LivingDefinition):
 class Bat(LivingDefinition):
     def __init__(self):
         self.name = 'bat'
+        self.short_usage_str = 'living.BAT'
 
 
 
 class Blaze(LivingDefinition):
     def __init__(self):
         self.name = 'blaze'
+        self.short_usage_str = 'living.BLAZE'
 
     BLAZE_FIREBALL_ATTACK    = EntityTask('blaze' ,'blaze_fireball_attack')
     MOVE_TOWARDS_RESTRICTION = EntityTask('blaze' ,'move_towards_restriction')
@@ -87,6 +91,7 @@ class Blaze(LivingDefinition):
 class CaveSpider(LivingDefinition):
     def __init__(self):
         self.name = 'cave_spider'
+        self.short_usage_str = 'living.CAVE_SPIDER'
 
     SWIM           = EntityTask('cave_spider' ,'swim')
     AVOID          = EntityTask('cave_spider' ,'avoid')
@@ -101,6 +106,7 @@ class CaveSpider(LivingDefinition):
 class Chicken(LivingDefinition):
     def __init__(self):
         self.name = 'chicken'
+        self.short_usage_str = 'living.CHICKEN'
 
     SWIM          = EntityTask('chicken' ,'swim')
     PANIC         = EntityTask('chicken' ,'panic')
@@ -115,6 +121,7 @@ class Chicken(LivingDefinition):
 class Cow(LivingDefinition):
     def __init__(self):
         self.name = 'cow'
+        self.short_usage_str = 'living.COW'
 
     SWIM          = EntityTask('cow' ,'swim')
     PANIC         = EntityTask('cow' ,'panic')
@@ -129,6 +136,7 @@ class Cow(LivingDefinition):
 class Creeper(LivingDefinition):
     def __init__(self):
         self.name = 'creeper'
+        self.short_usage_str = 'living.CREEPER'
 
     SWIM              = EntityTask('creeper' ,'swim')
     SWELL_CREEPER     = EntityTask('creeper' ,'swell_creeper')
@@ -143,12 +151,14 @@ class Creeper(LivingDefinition):
 class EnderDragon(LivingDefinition):
     def __init__(self):
         self.name = 'ender_dragon'
+        self.short_usage_str = 'living.ENDER_DRAGON'
 
 
 
 class Enderman(LivingDefinition):
     def __init__(self):
         self.name = 'enderman'
+        self.short_usage_str = 'living.ENDERMAN'
 
     SWIM                 = EntityTask('enderman' ,'swim')
     ATTACK_ON_COLLIDE    = EntityTask('enderman' ,'attack_on_collide')
@@ -162,6 +172,7 @@ class Enderman(LivingDefinition):
 class Endermite(LivingDefinition):
     def __init__(self):
         self.name = 'endermite'
+        self.short_usage_str = 'living.ENDERMITE'
 
     SWIM              = EntityTask('endermite' ,'swim')
     ATTACK_ON_COLLIDE = EntityTask('endermite' ,'attack_on_collide')
@@ -173,6 +184,7 @@ class Endermite(LivingDefinition):
 class Ghast(LivingDefinition):
     def __init__(self):
         self.name = 'ghast'
+        self.short_usage_str = 'living.GHAST'
 
     GHAST_FLY             = EntityTask('ghast' ,'ghast_fly')
     GHAST_LOOK_AROUND     = EntityTask('ghast' ,'ghast_look_around')
@@ -182,12 +194,14 @@ class Ghast(LivingDefinition):
 class Giant(LivingDefinition):
     def __init__(self):
         self.name = 'giant'
+        self.short_usage_str = 'living.GIANT'
 
 
 
 class Guardian(LivingDefinition):
     def __init__(self):
         self.name = 'guardian'
+        self.short_usage_str = 'living.GUARDIAN'
 
     GUARDIAN_ATTACK          = EntityTask('guardian' ,'guardian_attack')
     MOVE_TOWARDS_RESTRICTION = EntityTask('guardian' ,'move_towards_restriction')
@@ -200,6 +214,7 @@ class Guardian(LivingDefinition):
 class Horse(LivingDefinition):
     def __init__(self):
         self.name = 'horse'
+        self.short_usage_str = 'living.HORSE'
 
     SWIM                  = EntityTask('horse' ,'swim')
     PANIC                 = EntityTask('horse' ,'panic')
@@ -214,12 +229,14 @@ class Horse(LivingDefinition):
 class Human(LivingDefinition):
     def __init__(self):
         self.name = 'human'
+        self.short_usage_str = 'living.HUMAN'
 
 
 
 class IronGolem(LivingDefinition):
     def __init__(self):
         self.name = 'iron_golem'
+        self.short_usage_str = 'living.IRON_GOLEM'
 
     ATTACK_ON_COLLIDE        = EntityTask('iron_golem' ,'attack_on_collide')
     MOVE_TOWARDS_TARGET      = EntityTask('iron_golem' ,'move_towards_target')
@@ -234,6 +251,7 @@ class IronGolem(LivingDefinition):
 class MagmaCube(LivingDefinition):
     def __init__(self):
         self.name = 'magma_cube'
+        self.short_usage_str = 'living.MAGMA_CUBE'
 
     SLIME_FLOAT       = EntityTask('magma_cube' ,'slime_float')
     SLIME_ATTACK      = EntityTask('magma_cube' ,'slime_attack')
@@ -244,6 +262,7 @@ class MagmaCube(LivingDefinition):
 class MushroomCow(LivingDefinition):
     def __init__(self):
         self.name = 'mushroom_cow'
+        self.short_usage_str = 'living.MUSHROOM_COW'
 
     SWIM          = EntityTask('mushroom_cow' ,'swim')
     PANIC         = EntityTask('mushroom_cow' ,'panic')
@@ -258,6 +277,7 @@ class MushroomCow(LivingDefinition):
 class Ocelot(LivingDefinition):
     def __init__(self):
         self.name = 'ocelot'
+        self.short_usage_str = 'living.OCELOT'
 
     AVOID          = EntityTask('ocelot' ,'avoid')
     SWIM           = EntityTask('ocelot' ,'swim')
@@ -275,6 +295,7 @@ class Ocelot(LivingDefinition):
 class Pig(LivingDefinition):
     def __init__(self):
         self.name = 'pig'
+        self.short_usage_str = 'living.PIG'
 
     SWIM           = EntityTask('pig' ,'swim')
     PANIC          = EntityTask('pig' ,'panic')
@@ -291,6 +312,7 @@ class Pig(LivingDefinition):
 class PigZombie(LivingDefinition):
     def __init__(self):
         self.name = 'pig_zombie'
+        self.short_usage_str = 'living.PIG_ZOMBIE'
 
     SWIM                     = EntityTask('pig_zombie' ,'swim')
     ATTACK_ON_COLLIDE        = EntityTask('pig_zombie' ,'attack_on_collide')
@@ -304,6 +326,7 @@ class PigZombie(LivingDefinition):
 class Rabbit(LivingDefinition):
     def __init__(self):
         self.name = 'rabbit'
+        self.short_usage_str = 'living.RABBIT'
 
     SWIM                = EntityTask('rabbit' ,'swim')
     RABBIT_PANIC        = EntityTask('rabbit' ,'rabbit_panic')
@@ -318,6 +341,7 @@ class Rabbit(LivingDefinition):
 class Sheep(LivingDefinition):
     def __init__(self):
         self.name = 'sheep'
+        self.short_usage_str = 'living.SHEEP'
 
     SWIM          = EntityTask('sheep' ,'swim')
     PANIC         = EntityTask('sheep' ,'panic')
@@ -333,6 +357,7 @@ class Sheep(LivingDefinition):
 class Silverfish(LivingDefinition):
     def __init__(self):
         self.name = 'silverfish'
+        self.short_usage_str = 'living.SILVERFISH'
 
     SWIM                     = EntityTask('silverfish' ,'swim')
     SUMMON_SILVERFISH        = EntityTask('silverfish' ,'summon_silverfish')
@@ -343,6 +368,7 @@ class Silverfish(LivingDefinition):
 class Skeleton(LivingDefinition):
     def __init__(self):
         self.name = 'skeleton'
+        self.short_usage_str = 'living.SKELETON'
 
     SWIM              = EntityTask('skeleton' ,'swim')
     AVOID_SUN         = EntityTask('skeleton' ,'avoid_sun')
@@ -358,6 +384,7 @@ class Skeleton(LivingDefinition):
 class Slime(LivingDefinition):
     def __init__(self):
         self.name = 'slime'
+        self.short_usage_str = 'living.SLIME'
 
     SLIME_FLOAT       = EntityTask('slime' ,'slime_float')
     SLIME_ATTACK      = EntityTask('slime' ,'slime_attack')
@@ -368,6 +395,7 @@ class Slime(LivingDefinition):
 class Snowman(LivingDefinition):
     def __init__(self):
         self.name = 'snowman'
+        self.short_usage_str = 'living.SNOWMAN'
 
     ATTACK_WITH_ARROW = EntityTask('snowman' ,'attack_with_arrow')
     WANDER            = EntityTask('snowman' ,'wander')
@@ -378,6 +406,7 @@ class Snowman(LivingDefinition):
 class Spider(LivingDefinition):
     def __init__(self):
         self.name = 'spider'
+        self.short_usage_str = 'living.SPIDER'
 
     SWIM           = EntityTask('spider' ,'swim')
     AVOID          = EntityTask('spider' ,'avoid')
@@ -392,6 +421,7 @@ class Spider(LivingDefinition):
 class Squid(LivingDefinition):
     def __init__(self):
         self.name = 'squid'
+        self.short_usage_str = 'living.SQUID'
 
     SQUID_MOVE_RANDOM = EntityTask('squid' ,'squid_move_random')
 
@@ -399,6 +429,7 @@ class Squid(LivingDefinition):
 class Villager(LivingDefinition):
     def __init__(self):
         self.name = 'villager'
+        self.short_usage_str = 'living.VILLAGER'
 
     SWIM                          = EntityTask('villager' ,'swim')
     AVOID                         = EntityTask('villager' ,'avoid')
@@ -419,6 +450,7 @@ class Villager(LivingDefinition):
 class Witch(LivingDefinition):
     def __init__(self):
         self.name = 'witch'
+        self.short_usage_str = 'living.WITCH'
 
     SWIM              = EntityTask('witch' ,'swim')
     ATTACK_WITH_ARROW = EntityTask('witch' ,'attack_with_arrow')
@@ -431,6 +463,7 @@ class Witch(LivingDefinition):
 class Wither(LivingDefinition):
     def __init__(self):
         self.name = 'wither'
+        self.short_usage_str = 'living.WITHER'
 
     SWIM              = EntityTask('wither' ,'swim')
     ATTACK_WITH_ARROW = EntityTask('wither' ,'attack_with_arrow')
@@ -442,6 +475,7 @@ class Wither(LivingDefinition):
 class Wolf(LivingDefinition):
     def __init__(self):
         self.name = 'wolf'
+        self.short_usage_str = 'living.WOLF'
 
     SWIM              = EntityTask('wolf' ,'swim')
     SIT               = EntityTask('wolf' ,'sit')
@@ -458,6 +492,7 @@ class Wolf(LivingDefinition):
 class Zombie(LivingDefinition):
     def __init__(self):
         self.name = 'zombie'
+        self.short_usage_str = 'living.ZOMBIE'
 
     SWIM                     = EntityTask('zombie' ,'swim')
     ATTACK_ON_COLLIDE        = EntityTask('zombie' ,'attack_on_collide')

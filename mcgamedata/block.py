@@ -200,3 +200,8 @@ BIRCH_DOOR                    = block_definition.BirchDoor(); ALL.append(BIRCH_D
 JUNGLE_DOOR                   = block_definition.JungleDoor(); ALL.append(JUNGLE_DOOR)
 ACACIA_DOOR                   = block_definition.AcaciaDoor(); ALL.append(ACACIA_DOOR)
 DARK_OAK_DOOR                 = block_definition.DarkOakDoor(); ALL.append(DARK_OAK_DOOR)
+
+for block_def in ALL:
+    for block_property in block_def.ALL_PROPERTIES:
+        block_property.block_definition = block_def
+
