@@ -8,6 +8,7 @@ INDENT = "    "
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 blocks = json.loads(open(os.path.join(this_dir, "block_metadata.json")).read())
+blocks = sorted(blocks, key=lambda b: b["name"])
 
 target_definition_file = os.path.join(this_dir, "../mcgamedata/block_definition.py")
 target_block_file = os.path.join(this_dir, "../mcgamedata/block.py")
