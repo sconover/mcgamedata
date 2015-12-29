@@ -4,6 +4,14 @@ class BlockDefinition():
     def __str__(self):
         return self.short_usage_str
 
+    def __eq__(self, other):
+        return self.__class__ == other.__class__ and self.name == other.name
+
+    def get_property(self, name):
+        for p in vars(self.__class__)['ALL_PROPERTIES']:
+            if p.property_name == name:
+                return p
+
 
 class AcaciaDoor(BlockDefinition):
     def __init__(self):

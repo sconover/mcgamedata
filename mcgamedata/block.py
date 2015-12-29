@@ -205,3 +205,7 @@ for block_def in ALL:
     for block_property in block_def.ALL_PROPERTIES:
         block_property.block_definition = block_def
 
+def from_block_type_name(name):
+    for block_def in ALL:
+        if block_def.name == name:
+            return block_def

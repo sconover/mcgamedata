@@ -19,6 +19,14 @@ block_definition_lines = [
     "class BlockDefinition():",
     INDENT + "def __str__(self):",
     INDENT + INDENT + "return self.short_usage_str",
+    "",
+    INDENT + "def __eq__(self, other):",
+    INDENT + INDENT + "return self.__class__ == other.__class__ and self.name == other.name",
+    "",
+    INDENT + "def get_property(self, name):",
+    INDENT + INDENT + "for p in vars(self.__class__)['ALL_PROPERTIES']:",
+    INDENT + INDENT + INDENT + "if p.property_name == name:",
+    INDENT + INDENT + INDENT + INDENT + "return p",
     ""
 ]
 
@@ -132,7 +140,11 @@ block_lines.extend([
     "for block_def in ALL:",
     INDENT + "for block_property in block_def.ALL_PROPERTIES:",
     INDENT + INDENT + "block_property.block_definition = block_def",
-    ""
+    "",
+    "def from_block_type_name(name):",
+    INDENT + "for block_def in ALL:",
+    INDENT + INDENT + "if block_def.name == name:",
+    INDENT + INDENT + INDENT + "return block_def"
 ])
 
 body = "\n".join(block_lines) + "\n"
